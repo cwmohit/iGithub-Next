@@ -80,7 +80,7 @@ export default function Home({ data }) {
           <div className="row overflow-auto">
             {data?.map((user) => (
               <div key={user?.id} className="col-md-4 col-12">
-                <UserCard user={user} />
+                <UserCard user={user} profile={"profile"} url={user?.html_url}/>
               </div>
             ))}
           </div>
