@@ -7,7 +7,7 @@ function User({ data = [] }) {
       {data &&
         data?.map((user) => (
           <div key={user?.id} className="col-md-4 col-12">
-            <UserCard user={user}/>
+            <UserCard url={user?.html_url} profile={"user"} user={user}/>
           </div>  
         ))}
     </div>

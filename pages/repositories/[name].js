@@ -10,7 +10,7 @@ function Repo({ data }) {
       {data?.items &&
         data?.items?.map((user) => (
           <div key={user.id} className="col-md-4 col-12">
-            <UserCard user={user} />
+            <UserCard url={`https://github.com/${user.login}?tab=repositories`} profile={"repo"} user={user} />
           </div>
         ))}
        {/* {

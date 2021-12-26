@@ -3,7 +3,7 @@ import Image from "next/image";
 const myLoader = ({ src, width, quality }) => {
   return `${src}`;
 };
-function UserCard({ user }) {
+function UserCard({ user, profile, url }) {
   return (
     <div className="card mb-3 bg-dark">
       <div className="row g-0">
@@ -18,10 +18,10 @@ function UserCard({ user }) {
           <div className="card-body">
             <h5 className="card-title text-white">{user.login}</h5>
             <button
-              onClick={()=> window.open(`http://github.com/${user?.login}`)}
+              onClick={()=> window.open(`${url}`)}
               className="btn btn-lg btn-secondary fw-bold border-white bg-white"
             >
-              Go to the profile
+              Go to the {profile}
             </button>
           </div>
         </div>
