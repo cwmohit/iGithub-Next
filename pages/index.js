@@ -1,5 +1,6 @@
 import UserCard from "../components/UserCard";
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function Home({ data }) {
   const router = useRouter();
@@ -21,9 +22,11 @@ export default function Home({ data }) {
             <div>
               <h3 className="float-md-start mb-0">iGithub</h3>
               <nav className="nav nav-masthead justify-content-center float-md-end">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link href="/">                
+                  <a className="nav-link active" aria-current="page">
+                    Home
+                  </a>
+                </Link>
               </nav>
             </div>
           </header>
@@ -85,13 +88,12 @@ export default function Home({ data }) {
           <footer className="text-white-50 mt-3">
             <p>
               iGithub 2022 | by{" "}
-              <a
-                href="https://github.com/cwmohit"
-                target="_blank"
-                className="text-white"
+              <button
+                onClick={()=> window.open(`http://github.com/cwmohit`)}
+                className="btn btn-small btn-secondary fw-bold border-white bg-white"
               >
                 cwmohit
-              </a>
+              </button>
             </p>
           </footer>
         </div>

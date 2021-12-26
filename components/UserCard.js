@@ -17,13 +17,12 @@ function UserCard({ user }) {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title text-white">{user.login}</h5>
-            <a
-              href={`https://github.com/${user.login}`}
-              target="_blank"
+            <button
+              onClick={()=> window.open(`http://github.com/${user?.login}`)}
               className="btn btn-lg btn-secondary fw-bold border-white bg-white"
             >
               Go to the profile
-            </a>
+            </button>
           </div>
         </div>
       </div>
