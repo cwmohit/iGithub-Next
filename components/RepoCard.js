@@ -18,6 +18,7 @@ function UserCard({ repo }) {
           <div className="card-body">
             <h5 className="card-title text-white">{repo.full_name}</h5>
             <p className="text-white">{repo?.language}</p>
+            <p className="text-white">User : {repo?.owner?.login}</p>
             <button
               onClick={()=> window.open(`${repo.html_url}`)}
               className="btn btn-lg btn-secondary fw-bold border-white bg-white"
