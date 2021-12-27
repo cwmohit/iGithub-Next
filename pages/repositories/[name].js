@@ -1,16 +1,17 @@
 import React from "react";
-import UserCard from "../../components/UserCard";
+import RepoCard from "../../components/RepoCard";
 import { useRouter } from 'next/router'
 
 function Repo({ data }) {
   const router = useRouter();
   let {page, name} = router?.query;
+  console.log(data)
   return (
     <div className="row container m-auto users-container">
       {data?.items &&
-        data?.items?.map((user) => (
-          <div key={user.id} className="col-md-4 col-12">
-            <UserCard url={`https://github.com/${user.login}?tab=repositories`} profile={"repo"} user={user} />
+        data?.items?.map((repo) => (
+          <div key={repo.id} className="col-md-4 col-12">
+            <RepoCard repo={repo} />
           </div>
         ))}
        {/* {
@@ -40,12 +41,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `https://api.github.com/search/users?q=${
+    `https://api.github.com/search/repositories?q=${
       params.name
     }&per_page=${100}&page=${params?.page}`
   );
-  // console.log(res)
   const data = await res.json();
+
   if (!data) {
     return {
       notFound: true,
